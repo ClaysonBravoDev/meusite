@@ -1,0 +1,411 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  color: white;
+  max-width: none;
+  margin-top: 0px;
+  background: #2D2E33;
+  align-items: flex-end; /* Alinha os botões pela base */
+  height: 100vh;
+  padding-bottom: 80px; /* Espaço do chão visual */
+}
+
+
+
+
+a {
+  text-decoration: none;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: #0e0e0e;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 60px;
+  z-index: 1000;
+  border-bottom: 1px solid #222;
+}
+
+.logo {
+  font-size: 28px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.logo .orange {
+  color: #fff;
+}
+.orange2{
+  color: #ff5722;
+}
+
+.nav {
+  display: flex;
+  gap: 25px;
+  align-items: center;
+}
+
+.nav a {
+  color: #fff;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.nav a:hover {
+  color: #ff5722;
+}
+
+.btn-hire {
+      border: 2px solid #ff5722;
+    padding: 12px 24px;
+    color: #ff5722;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 160px 60px 60px;
+  min-height: 100vh;
+}
+
+.hero-text {
+  max-width: 600px;
+}
+
+.hero-text .tag {
+  background: #ff5722;
+  padding: 5px 12px;
+  border-radius: 4px;
+  font-size: 14px;
+  display: inline-block;
+}
+.hero-text{
+      margin-left: 100px;
+}
+
+.hero-text h1 {
+  font-size: 48px;
+  margin: 20px 0 10px;
+}
+
+.hero-text p {
+  font-size: 18px;
+  margin-bottom: 30px;
+  color: #ccc;
+}
+
+.buttons {
+  display: flex;
+  gap: 20px;
+}
+
+.btn-orange {
+  background-color: #ff5722;
+  color: #fff;
+  padding: 12px 24px;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.btn-orange:hover {
+  background-color: #e14a1d;
+}
+
+
+/*
+.btn-dark {
+  border: 2px solid #fff;
+  padding: 12px 24px;
+  color: #fff;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.btn-dark:hover {
+  background-color: #fff;
+  color: #000;
+}*/
+
+.btn-dark {
+  --first-color: black;
+  --second-color: #ff5722;
+  --third-color: black;
+  position: relative;
+  z-index: 0;
+  overflow: hidden;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 8px;
+  color: white;
+  background-color: black; /* fallback */
+  cursor: pointer;
+}
+
+@property --rotate {
+  syntax: "<angle>";
+  initial-value: 132deg;
+  inherits: false;
+}
+
+.btn-dark::before,
+.btn-dark::after {
+  opacity: 0;
+  content: "";
+  transition: all 0.5s ease-in-out;
+  position: absolute;
+  z-index: -1;
+}
+
+.btn-dark:hover::before,
+.btn-dark:hover::after {
+  opacity: 1;
+  background-image: linear-gradient(
+    var(--rotate),
+    var(--first-color),
+    var(--second-color) 43%,
+    var(--third-color)
+  );
+  animation: spin 2.5s linear infinite;
+}
+
+.btn-dark:hover::before {
+  width: 104%;
+  height: 104%;
+  border-radius: 8px;
+  top: -2%;
+  left: -2%;
+}
+
+.btn-dark:hover::after {
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  transform: scale(0.9);
+  filter: blur(100px);
+}
+
+@keyframes spin {
+  0% {
+    --rotate: 0deg;
+  }
+  100% {
+    --rotate: 360deg;
+  }
+}
+
+
+.hero-image img {
+    max-width: 250px;
+    width: 100%;
+    border-radius: 12px;
+    margin-right: 205px;
+}
+
+
+h4{
+    padding-bottom: 10px;
+}
+
+
+
+/* parte dos bottons rede social */
+.menu-header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 20px 60px;
+  background-color: #2D2E33; /* ou a cor do seu site */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+}
+
+
+
+.logo {
+  font-size: 22px;
+  font-weight: bold;
+  color: #ff5722; /* verde neon */
+}
+
+.menu-nav {
+  display: flex;
+  gap: 30px;
+}
+
+.menu-nav a {
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: 500;
+  font-family: "Poppins", sans-serif;
+  transition: 0.3s;
+}
+
+.menu-nav a:hover {
+  color: #00ffc8;
+}
+
+
+.container {
+  display: flex;
+  gap: 40px;
+  transform-style: preserve-3d;
+  perspective: 1200px;
+}
+
+.btn {
+  background: white;
+  color: black;
+  width: 200px;
+  height: 55px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 500;
+  box-shadow: 0 10px 12px rgba(0, 0, 0, 0.25);
+  transform: rotate(-30deg) skew(25deg) translate(0,0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  text-transform: lowercase;
+  font-size: 16px;
+  transform-origin: bottom center; /* Alinha a base para rotação */
+
+  /* Aqui você adiciona a transição para suavizar os efeitos de hover */
+  transition: all 0.4s ease-in-out;
+}
+
+.btn i {
+  font-size: 20px;
+}
+
+.btn:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.5);
+  color: white;
+}
+
+/* Hover com cores específicas */
+.btn.facebook:hover {
+  background-color: #1877f2; /* azul facebook */
+  color: white;
+  box-shadow: 0 15px 20px rgba(24, 119, 242, 0.6);
+  transform: translateY(-15px) rotateX(15deg);
+}
+
+.btn.twitter:hover {
+  background: #1da1f2;
+}
+
+.btn.google:hover {
+  background: #dd4b39;
+}
+
+.btn.instagram:hover {
+  background: #e4405f;
+}
+*/
+
+
+
+ul.social-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  height: 100vh;
+  gap: 30px;
+  list-style: none;
+  padding: 0;
+}
+
+ul.social-buttons li {
+  position: relative;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 8px 8px 15px rgba(0,0,0,0.3);
+  transform-style: preserve-3d;
+  transition: all 0.3s ease;
+}
+
+ul.social-buttons li a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 20px 30px;
+  text-decoration: none;
+  color: #333;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+ul.social-buttons li i {
+  font-size: 20px;
+  transition: all 0.3s ease;
+}
+
+/* Facebook */
+ul.social-buttons li:nth-child(1):hover {
+  transform: translateY(-20px) rotateX(15deg);
+  box-shadow: 0 20px 30px rgba(24, 119, 242, 0.6);
+  background: #1877f2;
+}
+
+ul.social-buttons li:nth-child(1):hover a,
+ul.social-buttons li:nth-child(1):hover i {
+  color: white;
+}
+
+/* Twitter */
+ul.social-buttons li:nth-child(2):hover {
+  transform: translateY(-20px) rotateX(15deg);
+  box-shadow: 0 20px 30px rgba(29, 161, 242, 0.6);
+  background: #1da1f2;
+}
+
+ul.social-buttons li:nth-child(2):hover a,
+ul.social-buttons li:nth-child(2):hover i {
+  color: white;
+}
+
+/* Google */
+ul.social-buttons li:nth-child(3):hover {
+  transform: translateY(-20px) rotateX(15deg);
+  box-shadow: 0 20px 30px rgba(234, 67, 53, 0.6);
+  background: #db4437;
+}
+
+ul.social-buttons li:nth-child(3):hover a,
+ul.social-buttons li:nth-child(3):hover i {
+  color: white;
+}
+
+/* Instagram */
+ul.social-buttons li:nth-child(4):hover {
+  transform: translateY(-20px) rotateX(15deg);
+  box-shadow: 0 20px 30px rgba(193, 53, 132, 0.6);
+  background: #c13584;
+}
+
+ul.social-buttons li:nth-child(4):hover a,
+ul.social-buttons li:nth-child(4):hover i {
+  color: white;
+}
